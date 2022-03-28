@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/Contact.css'
+import '../styles/Contact.css'
 
 export default function Contact() {
     return <section className='contact' id='contact'>
@@ -12,17 +12,17 @@ export default function Contact() {
             <div className="info-wrap">
                 <div className="row">
                     <div className="col-lg-4 col-md-6 info">
-                        <i class="fas fa-map-marker-alt"/>
+                        <i className="fas fa-map-marker-alt"/>
                         <h4>Location:</h4>
                         <p>224 Carrizo RDG <br/>Floresville, Texas 78114</p>
                     </div>
                     <div className="col-lg-4 col-md-6 info mt-4 mt-lg-0">
-                        <i class="fas fa-envelope"/>
+                        <i className="fas fa-envelope"/>
                         <h4>Email:</h4>
                         <p>prashantgupta2507@gmail.com</p>
                     </div>
                     <div className="col-lg-4 col-md-6 info mt-4 mt-lg-0">
-                        <i class="fas fa-phone-alt"/>                       
+                        <i className="fas fa-phone-alt"/>                       
                         <h4>Call:</h4>
                         <p>+1 5589 55488 51 <br/>+1 5589 22475 14</p>
                     </div>

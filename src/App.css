@@ -1,5 +1,5 @@
 .App{
-    background-image: url("/src/main-bg.jpg");
+    background-image: url("/src/Images/main-bg.jpg");
     background-size:     cover;             
     background-repeat:   no-repeat;
     background-position: center center;  
@@ -7,9 +7,9 @@
 
 nav{
     display: grid;
-    grid-template-columns: 30vw 40vw 20vw;
+    grid-template-columns: 30vw 30vw 15vw 15vw;
     padding-top: 5vh;
-    color: palevioletred;
+    color: rgb(216, 112, 147);
 }
 
 nav img{
@@ -22,12 +22,12 @@ nav a{
 }
 
 nav span{
-    padding-left: 10vw;
+    padding-left: 5vw;
     color: inherit;
 }
 
 nav a:hover, nav span:hover{
-    color:white;
+    color:black;
     cursor: pointer;
 }
 
@@ -39,7 +39,7 @@ ul{
 
 ul li:hover{
     cursor: pointer;
-    color: white;
+    color: black;
 }
 
 .dropdown-menu .dropdown-submenu {

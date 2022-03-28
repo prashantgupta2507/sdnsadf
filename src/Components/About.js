@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutImg from '../about-img.jpeg'
-import "../CSS/About.css"
+import AboutImg from '../Images/about-img.jpeg'
+import "../styles/About.css"
 
 export default function About() {
     return <section className='contact' id='about'>
@@ -26,7 +26,6 @@ export default function About() {
                             Mr. Prashant Gupta</h6>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>;
