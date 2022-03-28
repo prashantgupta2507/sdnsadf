@@ -35,7 +35,7 @@ const userReducer = (state = initialState, action) => {
           fName: action.payload.fName,
           lName: action.payload.lName,
           gender: action.payload.gender,
-          phone:action.payload.phone
+          phone: action.payload.phone
         },
       };
     case actionType.UPDATE_USER_EMAIL:

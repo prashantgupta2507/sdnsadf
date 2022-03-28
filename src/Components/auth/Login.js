@@ -17,7 +17,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import { bindActionCreators } from "redux";
-import {actionCreators} from '../../Actions/index'
+import { actionCreators } from '../../Actions/index'
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -87,7 +87,7 @@ export default function Login() {
 
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { setUserInfo,  setLoginPage, modalOpen, modalClose , setIsAuthenticate , setEmail, setAuthtoken} = bindActionCreators(actionCreators, dispatch)
+  const { setUserInfo, setLoginPage, modalOpen, modalClose, setIsAuthenticate, setEmail, setAuthtoken } = bindActionCreators(actionCreators, dispatch)
 
   const { popupLogin } = useSelector((state) => state.userReducer);
 
@@ -145,44 +145,44 @@ export default function Login() {
   };
 
   const completeLogin = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch("http://localhost:5500/api/auth/login", {
-          method:'post',
-          headers:{
-            "Content-Type":"application/json",
-            "Access-Control-Allow-Origin":"*",
-            "Accept":"application/json, text/plain, */*"
-          },
-          body:JSON.stringify(values)
-        });
-        const result = await res.json();
-        const data = await result.Data;
-        setLoading(false)
-        if (res.status != 302) {
-          toastMessage(result.errors);
-        } else {
-          setUserInfo({fName:data.fName,lName:data.lName,gender:data.gender,phone:data.phone,admin:Boolean(data.admin),orders:data.orders});
-          setEmail(data.email)
-          setIsAuthenticate(true)
-          setAuthtoken(data.token)
-          toastMessage("Login Successfull","success")
-          //Modal Close
-          if(popupLogin){
-            modalClose();
-          }
-          if(data.admin){
-            history.replace('/admin')
-          }
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:5500/api/auth/login", {
+        method: 'post',
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Accept": "application/json, text/plain, */*"
+        },
+        body: JSON.stringify(values)
+      });
+      const result = await res.json();
+      const data = await result.Data;
+      setLoading(false)
+      if (res.status != 302) {
+        toastMessage(result.errors);
+      } else {
+        setUserInfo({ fName: data.fName, lName: data.lName, gender: data.gender, phone: data.phone, admin: Boolean(data.admin), orders: data.orders });
+        setEmail(data.email)
+        setIsAuthenticate(true)
+        setAuthtoken(data.token)
+        toastMessage("Login Successfull", "success")
+        //Modal Close
+        if (popupLogin) {
+          modalClose();
         }
-      } catch (error) {
-        setLoading(false);
-        if (error.message === "login/invalid-email-or-password") {
-          toastMessage("Invalid Email or Password.", "info");
-        } else {
-          toastMessage("Something went wrong. Please login later.", "error");
+        if (data.admin) {
+          history.replace('/admin')
         }
       }
+    } catch (error) {
+      setLoading(false);
+      if (error.message === "login/invalid-email-or-password") {
+        toastMessage("Invalid Email or Password.", "info");
+      } else {
+        toastMessage("Something went wrong. Please login later.", "error");
+      }
+    }
   };
 
   const onLoginClick = () => {
@@ -204,79 +204,79 @@ export default function Login() {
   };
 
   return (
-        <>
-          <TextField
-            error={errors.email}
-            id={
-              errors.email
-                ? "standard-error-helper-text"
-                : "standard-start-adornment"
-            }
-            label="Enter Email"
-            className={`${classes.signupInputs} my-3`}
-            onChange={handleInputs}
-            value={values.email}
-            name="email"
-            helperText={errors.email && `${errorMsg.email}`}
-          />
-          <FormControl
-            className={clsx(
-              classes.margin,
-              classes.textField,
-              classes.signupInputs
-            )}
-            error={errors.password}
-          >
-            <InputLabel htmlFor="standard-adornment-password">
-              Enter Password
-            </InputLabel>
-            <Input
-              id={
-                errors.password
-                  ? "standard-adornment-password"
-                  : "standard-start-adornment"
-              }
-              type={showPassword ? "text" : "password"}
-              onChange={handleInputs}
-              value={values.password}
-              name="password"
-              error={errors.password}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                  >
-                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-            {errors.password && (
-              <FormHelperText id="standard-helper-text" error={true}>
-                {errorMsg.password}
-              </FormHelperText>
-            )}
-          </FormControl>
-          <Button
-            variant="contained"
-            className={`${classes.btn} my-5`}
-            style={{ background: "#fb641b", color: "#fff" }}
-            disabled={loading}
-            onClick={onLoginClick}
-          >
-            {loading ? (
-              <CircularProgress size={24} className={classes.buttonProgress} />
-            ) : (
-              "Login"
-            )}
-          </Button>
-          <a
-            className="signup_text"
-            onClick={() => {setLoginPage(false);modalOpen()}}
-          >
-            New to Bestof Shopping? Create an account
-          </a>
+    <>
+      <TextField
+        error={errors.email}
+        id={
+          errors.email
+            ? "standard-error-helper-text"
+            : "standard-start-adornment"
+        }
+        label="Enter Email"
+        className={`${classes.signupInputs} my-3`}
+        onChange={handleInputs}
+        value={values.email}
+        name="email"
+        helperText={errors.email && `${errorMsg.email}`}
+      />
+      <FormControl
+        className={clsx(
+          classes.margin,
+          classes.textField,
+          classes.signupInputs
+        )}
+        error={errors.password}
+      >
+        <InputLabel htmlFor="standard-adornment-password">
+          Enter Password
+        </InputLabel>
+        <Input
+          id={
+            errors.password
+              ? "standard-adornment-password"
+              : "standard-start-adornment"
+          }
+          type={showPassword ? "text" : "password"}
+          onChange={handleInputs}
+          value={values.password}
+          name="password"
+          error={errors.password}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+        {errors.password && (
+          <FormHelperText id="standard-helper-text" error={true}>
+            {errorMsg.password}
+          </FormHelperText>
+        )}
+      </FormControl>
+      <Button
+        variant="contained"
+        className={`${classes.btn} my-5`}
+        style={{ background: "#fb641b", color: "#fff" }}
+        disabled={loading}
+        onClick={onLoginClick}
+      >
+        {loading ? (
+          <CircularProgress size={24} className={classes.buttonProgress} />
+        ) : (
+          "Login"
+        )}
+      </Button>
+      <a
+        className="signup_text"
+        onClick={() => { setLoginPage(false); modalOpen() }}
+      >
+        New to Bestof Shopping? Create an account
+      </a>
     </>
   );
 }

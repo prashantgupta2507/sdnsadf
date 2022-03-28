@@ -11,7 +11,7 @@ export default function OrderFailedPage() {
     const { isAuthenticate } = useSelector((state) => state.userReducer);
 
     useEffect(() => {
-        if(!isAuthenticate)
+        if (!isAuthenticate)
             history.replace("/")
         setTimeout(() => {
             history.replace("/");
@@ -31,7 +31,7 @@ export default function OrderFailedPage() {
         >
             <div>
                 <img
-                    style={{ width: "350px", maxWidth: "90%", height:"50vh" }}
+                    style={{ width: "350px", maxWidth: "90%", height: "50vh" }}
                     src={TryAgain}
                     alt=""
                 />
@@ -47,7 +47,7 @@ export default function OrderFailedPage() {
                     style={{ backgroundColor: "#2874f0" }}
                     variant="contained"
                 >
-                    <Link to="/" style={{color:'white',textDecoration:'none'}}>GO TO HOMEPAGE</Link>
+                    <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>GO TO HOMEPAGE</Link>
                 </Button>
             </div>
         </div>

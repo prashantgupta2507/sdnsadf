@@ -108,7 +108,7 @@ export default function OrdersPage() {
                         {/* {orderDetails?.map((order,index) => (
                             <OrderRow order={order} key={index}/>
                         ))} */}
-                        <OrderRow order={orderDetails}/>
+                        <OrderRow order={orderDetails} />
                     </Grid>
                 </Grid>
             ) : (

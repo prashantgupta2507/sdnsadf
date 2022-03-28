@@ -29,7 +29,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "0 auto",
     marginTop: 15,
     padding: "5px 60px",
-    width:"12vw"
+    width: "12vw"
   },
 }));
 
@@ -39,7 +39,7 @@ export default function EmptyCart() {
   const { isAuthenticate } = useSelector((state) => state.userReducer);
 
   return (
-    <Box className={classes.component} style={{backgroundColor:'#f1f3f6'}}>
+    <Box className={classes.component} style={{ backgroundColor: '#f1f3f6' }}>
       <Box className={classes.container}>
         <img src={emptyCartUrl} className={classes.image} alt="main" />
         {isAuthenticate ? (

@@ -151,9 +151,9 @@ export default function CheckoutPage() {
     const { orderItems, totalAmount } = useSelector((state) => state.orderReducer);
 
     const dispatch = useDispatch();
-    const {getCartItems, clearCart} = bindActionCreators(cartActionCreators, dispatch)
-    const {setOrderItems} = bindActionCreators(orderActionCreators, dispatch)
-    const { getAddresses} = bindActionCreators(addressActionCreators, dispatch);
+    const { getCartItems, clearCart } = bindActionCreators(cartActionCreators, dispatch)
+    const { setOrderItems } = bindActionCreators(orderActionCreators, dispatch)
+    const { getAddresses } = bindActionCreators(addressActionCreators, dispatch);
 
     const history = useHistory();
 
@@ -278,7 +278,7 @@ export default function CheckoutPage() {
                                                             value={address.address_id}
                                                             label=""
                                                             control={<Radio style={{ color: "#2874f0" }}
-                                                        />}
+                                                            />}
                                                         />
                                                         <div>
                                                             <AddressCard

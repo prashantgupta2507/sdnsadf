@@ -12,7 +12,7 @@ export default function Orders() {
     let mounted = true
     axios.post('http://localhost:5500/api/admin/fetchAllOrders', { authtoken })
       .then(result => {
-        if (mounted){
+        if (mounted) {
           setData(result.data.orders)
         }
       })
@@ -106,7 +106,7 @@ export default function Orders() {
         <h4 className='text-center'>Buyer name</h4>
         <h4 className='text-center'>Total Price</h4>
         <h4 className='text-center'>Products Quantity</h4>
-        {data.map((value,index)=>{
+        {data.map((value, index) => {
           return (
             [<h6 key={index + data.length} className='text-center'>{value['Products Name']}</h6>,
             <h6 key={index + data.length + 1} className='text-center'>{value.name}</h6>,

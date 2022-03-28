@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 import '../../styles/Admin.css'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {actionCreators} from '../../Actions/index'
+import { actionCreators } from '../../Actions/index'
 
 export default function Admin() {
 
@@ -91,9 +91,9 @@ export default function Admin() {
     };
 
     const dispatch = useDispatch()
-    const {setIsAuthenticate, setEmail, setAuthtoken, setUserInfo} = bindActionCreators(actionCreators,dispatch)
+    const { setIsAuthenticate, setEmail, setAuthtoken, setUserInfo } = bindActionCreators(actionCreators, dispatch)
 
-    const logoutUser = () =>{
+    const logoutUser = () => {
         setIsAuthenticate(false)
         setEmail("")
         setUserInfo({})

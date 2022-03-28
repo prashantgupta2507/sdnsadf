@@ -27,7 +27,7 @@ export const getAddresses = () => async (dispatch, getState) => {
     const { isAuthenticate, authtoken } = getState().userReducer;
     if (isAuthenticate) {
         try {
-            const { data } = await axios.post('http://localhost:5500/api/user/address/get-addresses',{authtoken});
+            const { data } = await axios.post('http://localhost:5500/api/user/address/get-addresses', { authtoken });
             dispatch({
                 type: actionType.SET_ADDRESSES,
                 payload: {
@@ -36,15 +36,15 @@ export const getAddresses = () => async (dispatch, getState) => {
             });
         } catch (error) {
             console.log(error)
-         }
+        }
     }
 };
 
 export const deleteAddress = (id) => async (dispatch, getState) => {
     const { authtoken } = getState().userReducer;
     try {
-        await axios.post("http://localhost:5500/api/user/address/delete-address",{id, authtoken})
-    } catch (error) { 
+        await axios.post("http://localhost:5500/api/user/address/delete-address", { id, authtoken })
+    } catch (error) {
         console.log(error)
     }
     dispatch({

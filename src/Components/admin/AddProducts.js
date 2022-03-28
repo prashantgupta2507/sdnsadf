@@ -124,18 +124,18 @@ export default function AddProducts() {
     }
   }, [category])
 
-  const { authtoken } = useSelector((state)=>state.userReducer);
+  const { authtoken } = useSelector((state) => state.userReducer);
 
   const [data, setData] = useState({
-    authtoken:authtoken,
-    title:null,
-    category_title:sub_category,
-    quantity:null,
-    sale_price:null,
-    list_price:null,
-    description:null,
-    main_image_url:null,
-    size:null
+    authtoken: authtoken,
+    title: null,
+    category_title: sub_category,
+    quantity: null,
+    sale_price: null,
+    list_price: null,
+    description: null,
+    main_image_url: null,
+    size: null
   })
 
   let handleChange = (e) => {
@@ -145,26 +145,26 @@ export default function AddProducts() {
       setCategory(e.target.value)
     else
       setSub_category(e.target.value)
-    setData({...data,[e.target.id]:e.target.value})
+    setData({ ...data, [e.target.id]: e.target.value })
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:5500/api/admin/addProduct',data)
-      .then(res=>{
-        if(res.status === 201)
-          toastMessage("Product Added Successfully","success")
+    axios.post('http://localhost:5500/api/admin/addProduct', data)
+      .then(res => {
+        if (res.status === 201)
+          toastMessage("Product Added Successfully", "success")
         else
-          toastMessage("Oops! Something went wrong","error")
+          toastMessage("Oops! Something went wrong", "error")
       })
-      .catch(()=>toastMessage("Internal Server Error","error"))
+      .catch(() => toastMessage("Internal Server Error", "error"))
   }
 
   return (
     <div className='container-fluid py-3'>
       <div style={{ backgroundColor: 'white' }}>
         <h2 className='text-center py-3'>Add Product</h2>
-        <form className='add-product-form' onSubmit={(e)=>handleSubmit(e)}>
+        <form className='add-product-form' onSubmit={(e) => handleSubmit(e)}>
           <div className='container-fluid first_div'>
             <div>
               <label>Top-Category &nbsp;</label>
@@ -268,31 +268,31 @@ export default function AddProducts() {
             </div>
             <div>
               <label>Quantity &nbsp;</label>
-              <input type="number" name='quantity' id='quantity' required onChange={handleChange}/>
+              <input type="number" name='quantity' id='quantity' required onChange={handleChange} />
             </div>
             <div>
               <label>&nbsp; &nbsp; Sale&nbsp; Price &nbsp; &nbsp;</label>
-              <input type="number" name='sale_price' id='sale_price' required onChange={handleChange}/>
+              <input type="number" name='sale_price' id='sale_price' required onChange={handleChange} />
             </div>
             <div>
               <label>List Price &nbsp;&nbsp;</label>
-              <input type="number" name='list_price' id='list_price' required onChange={handleChange}/>
+              <input type="number" name='list_price' id='list_price' required onChange={handleChange} />
             </div>
           </div>
           <div className='container-fluid'>
             <label>Description &nbsp; &nbsp; &nbsp;</label>
-            <textarea name='description' id='description' rows={3} cols={73} required onChange={handleChange}/>
+            <textarea name='description' id='description' rows={3} cols={73} required onChange={handleChange} />
           </div>
           <div className='container-fluid'>
             <label>Images &nbsp;</label>
           </div>
           <div className='container-fluid third_div'>
-            <input type="url" name='main_image_url' id='main_image_url' placeholder='main image url' required onChange={handleChange}/>
+            <input type="url" name='main_image_url' id='main_image_url' placeholder='main image url' required onChange={handleChange} />
           </div>
 
           <div className='container-fluid'>
             <label>Size &nbsp;</label>
-            <input type="text" name='size' id='size' placeholder='enter size if apply on product' onChange={handleChange}/>
+            <input type="text" name='size' id='size' placeholder='enter size if apply on product' onChange={handleChange} />
           </div>
           <div className='container-fluid text-center py-2'>
             <button className='btn btn-primary' type='submit'>Sumbit</button>

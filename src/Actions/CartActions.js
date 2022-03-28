@@ -1,5 +1,4 @@
 import * as actionType from "../Action-Type/cartActionType";
-import axios from "axios";
 
 export const addToCart = (item) => async (dispatch) => {
   dispatch({

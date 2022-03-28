@@ -99,7 +99,7 @@ export default function Sidebar() {
     const location = useLocation();
     const { user } = useSelector((state) => state.userReducer);
     const { setUserInfo, setIsAuthenticate } = bindActionCreators(actionCreators, dispatch)
-    const {clearCart} = bindActionCreators(cartActionCreators, dispatch)
+    const { clearCart } = bindActionCreators(cartActionCreators, dispatch)
     const currentPath = location.pathname;
 
     const activeStyle = {
@@ -133,14 +133,14 @@ export default function Sidebar() {
                 <Link to="/orders" style={{ textDecoration: 'none' }}>
                     <Box className={clsx(classes.sideBarLink, classes.hoverTab)}>
                         <img src={OrderIcon} width="20px" height="20px" className={classes.sideBarLinkIcon} />
-                        <p style={{paddingTop:'15px'}}>MY ORDERS</p>
+                        <p style={{ paddingTop: '15px' }}>MY ORDERS</p>
                         <ChevronRight style={{ marginLeft: "auto" }} />
                     </Box>
                 </Link>
                 <Divider className={classes.divider} style={{ marginTop: 5 }} />
                 <Box className={classes.sideBarLink}>
                     <Person className={classes.sideBarLinkIcon} />
-                    <p style={{paddingTop:'15px'}}>ACCOUNT SETTINGS</p>
+                    <p style={{ paddingTop: '15px' }}>ACCOUNT SETTINGS</p>
                 </Box>
                 <Box className={classes.subMenu}>
                     <Link to="/account" style={{ textDecoration: 'none' }}>
@@ -167,7 +167,7 @@ export default function Sidebar() {
                     onClick={logout}
                 >
                     <PowerSettingsNew className={classes.sideBarLinkIcon} />
-                    <p style={{paddingTop:'15px'}}>Logout</p>
+                    <p style={{ paddingTop: '15px' }}>Logout</p>
                 </Box>
             </Box>
         </>

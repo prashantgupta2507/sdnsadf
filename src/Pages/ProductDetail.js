@@ -101,7 +101,7 @@ export default function ProductDetail(props) {
               <Typography>{data.summary}</Typography>
             </TableCell>
           </TableRow>
-          {data.size!==null && data.size!=='null' ? <TableRow className={classes.smallText}>
+          {data.size !== null && data.size !== 'null' ? <TableRow className={classes.smallText}>
             <TableCell className={classes.greyTextColor}>Size</TableCell>
             <TableCell className={clsx(classes.smallText, classes.borderNone)}>
               <Typography>{data.size}</Typography>

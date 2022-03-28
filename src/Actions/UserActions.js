@@ -1,6 +1,6 @@
 import * as actionType from "../Action-Type/UserActionType";
 
-export function setLoginPage (isLoginPage) {
+export function setLoginPage(isLoginPage) {
   return (dispatch) => {
     dispatch({
       type: actionType.SET_IS_LOGIN_PAGE,
@@ -9,7 +9,7 @@ export function setLoginPage (isLoginPage) {
   }
 };
 
-export function setEmail (email) {
+export function setEmail(email) {
   return (dispatch) => {
     dispatch({
       type: actionType.SET_EMAIL,
@@ -18,7 +18,7 @@ export function setEmail (email) {
   }
 };
 
-export function setOtpId (id) {
+export function setOtpId(id) {
   return (dispatch) => {
     dispatch({
       type: actionType.SET_VERIFICATION_ID,
@@ -27,7 +27,7 @@ export function setOtpId (id) {
   }
 };
 
-export function setIsAuthenticate (isAuthenticate) {
+export function setIsAuthenticate(isAuthenticate) {
   return (dispatch) => {
     dispatch({
       type: actionType.SET_IS_AUTHENTICATE,
@@ -36,7 +36,7 @@ export function setIsAuthenticate (isAuthenticate) {
   }
 };
 
-export function setUserInfo (user){
+export function setUserInfo(user) {
   return (dispatch) => {
     dispatch({
       type: actionType.SET_USER_INFO,
@@ -45,7 +45,7 @@ export function setUserInfo (user){
   }
 };
 
-export function setPopupLogin (isPopup) {
+export function setPopupLogin(isPopup) {
   return (dispatch) => {
     dispatch({
       type: actionType.SET_POPUP_LOGIN,
@@ -54,7 +54,7 @@ export function setPopupLogin (isPopup) {
   }
 };
 
-export function updateUserInfo (fName, lName, gender, phone) {
+export function updateUserInfo(fName, lName, gender, phone) {
   return (dispatch) => {
     dispatch({
       type: actionType.UPDATE_USER_INFO,
@@ -63,7 +63,7 @@ export function updateUserInfo (fName, lName, gender, phone) {
   }
 };
 
-export function updateEmail (email) {
+export function updateEmail(email) {
   return (dispatch) => {
     dispatch({
       type: actionType.UPDATE_USER_EMAIL,
@@ -72,7 +72,7 @@ export function updateEmail (email) {
   }
 };
 
-export function modalOpen () {
+export function modalOpen() {
   return (dispatch) => {
     dispatch({
       type: actionType.OPEN_MODAL,
@@ -81,7 +81,7 @@ export function modalOpen () {
   }
 };
 
-export function modalClose () {
+export function modalClose() {
   return (dispatch) => {
     dispatch({
       type: actionType.CLOSE_MODAL,
@@ -90,10 +90,10 @@ export function modalClose () {
   }
 };
 
-export function setAuthtoken (authtoken) {
+export function setAuthtoken(authtoken) {
   return (dispatch) => {
     dispatch({
-      type:actionType.SET_AUTHTOKEN,
+      type: actionType.SET_AUTHTOKEN,
       payload: authtoken
     })
   }

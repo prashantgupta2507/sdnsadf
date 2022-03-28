@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {cartActionCreators} from '../../Actions/index';
+import { cartActionCreators } from '../../Actions/index';
 import toastMessage from '../../utils/toastMessage'
 
 const useStyle = makeStyles({

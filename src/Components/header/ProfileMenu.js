@@ -13,8 +13,8 @@ const useStyles = makeStyles({
   menuLink: {
     display: "flex",
     cursor: "pointer",
-    marginLeft:'4vw',
-    color:'rgb(216, 112, 147)'
+    marginLeft: '4vw',
+    color: 'rgb(216, 112, 147)'
   },
   menuItem: {
     padding: "12px 25px"
@@ -61,13 +61,13 @@ function ProfileMenu() {
       onMouseEnter={handleClick}
       onMouseLeave={handleClose}
       onWheel={handleClose}
-      style={{height:'5vh'}}
+      style={{ height: '5vh' }}
     >
       <Box className={classes.menuLink}>
         <Typography style={{ extTransform: "capitalize" }}>
           {user.fName}
         </Typography>
-        <ExpandMore/>
+        <ExpandMore />
       </Box>
       <Menu
         id="simple-menu"

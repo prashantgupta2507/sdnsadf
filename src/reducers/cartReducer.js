@@ -51,10 +51,10 @@ const cartReducer = (state = initialState, action) => {
       };
 
     case actionType.SET_CART_ITEMS:
-        return {
-          ...state,
-          cartItems: action.payload.cartItems,
-        };
+      return {
+        ...state,
+        cartItems: action.payload.cartItems,
+      };
     default:
       return state;
   }

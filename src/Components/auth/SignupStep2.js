@@ -179,7 +179,7 @@ export default function SignupStep2() {
             let result = await res.json()
             if (res.status === 201) {
                 setIsAuthenticate(true);
-                setUserInfo({ fName: makeCapitalizeText(result.Data.fName), lName: makeCapitalizeText(result.Data.lName), gender:null,phone:null, admin: Boolean(result.Data.admin),orders:[]})
+                setUserInfo({ fName: makeCapitalizeText(result.Data.fName), lName: makeCapitalizeText(result.Data.lName), gender: null, phone: null, admin: Boolean(result.Data.admin), orders: [] })
                 setAuthtoken(result.Data.token)
                 toastMessage("Registration Successfull", "success")
             }

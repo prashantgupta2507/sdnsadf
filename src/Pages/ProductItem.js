@@ -57,16 +57,16 @@ const useStyles = makeStyles((theme) => ({
 export default function DataItem() {
     const location = useLocation()
 
-    useEffect(()=>{
-        if(location.state === undefined || location.state === null)
+    useEffect(() => {
+        if (location.state === undefined || location.state === null)
             history.replace("/")
     })
 
     const classes = useStyles();
-    const [data, setData] = useState(location.state?location.state.data:null)
+    const [data, setData] = useState(location.state ? location.state.data : null)
     const history = useHistory()
 
-    
+
 
     var rate = (Math.random() * 5).toFixed(1);
     var reviewCount = Math.round(Math.random() * 10000 + 1);
@@ -103,7 +103,7 @@ export default function DataItem() {
                             <span className={classes.price}>₹{data.price}</span>
                             &nbsp;&nbsp;&nbsp;
                             <span className={classes.greyTextColor}>
-                                <strike>₹{Math.floor((data.price*100)/(100-data.discount))}</strike>
+                                <strike>₹{Math.floor((data.price * 100) / (100 - data.discount))}</strike>
                             </span>
                             &nbsp;&nbsp;&nbsp;
                             <span style={{ color: "#388E3C" }}>
@@ -114,7 +114,7 @@ export default function DataItem() {
                     </Grid>
                 </Grid>
             )}
-            <ToastMessageContainer/>
+            <ToastMessageContainer />
         </Box>
     )
 }

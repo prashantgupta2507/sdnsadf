@@ -31,7 +31,7 @@ export default function ErrorPage() {
                     style={{ backgroundColor: "#2874f0" }}
                     variant="contained"
                 >
-                    <Link to="/" style={{color:'white', textDecoration:'none'}}>GO TO HOMEPAGE</Link>
+                    <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>GO TO HOMEPAGE</Link>
                 </Button>
             </div>
         </div>

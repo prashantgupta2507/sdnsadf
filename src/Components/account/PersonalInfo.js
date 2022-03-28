@@ -92,14 +92,14 @@ export default function PersonalInfo() {
                     lName: makeCapitalizeText(values.lName),
                     gender: values.gender,
                 }).then((res) => {
-                    if(res.status===200){
+                    if (res.status === 200) {
                         updateUserInfo(
                             makeCapitalizeText(values.fName),
                             makeCapitalizeText(values.lName),
                             values.gender
                         )
                         toastMessage("Account details updated !", "success");
-                    }else{
+                    } else {
                         toastMessage("Please Correct your credentials", "error");
                     }
                 }).catch((e) => {
@@ -114,16 +114,16 @@ export default function PersonalInfo() {
     useEffect(() => {
         if (initial.current === true) {
             initial.current = false
-        }else{
+        } else {
             if (!errors.phone) {
                 axios.patch("http://localhost:5500/api/user/accounts/update-phone", {
                     authtoken: authtoken,
                     phone: values.phone,
                 }).then((res) => {
-                    if(res.status === 200){
+                    if (res.status === 200) {
                         updateUserInfo(values.fName, values.lName, values.gender, values.phone)
                         toastMessage("Phone number updated !", "success");
-                    }else{
+                    } else {
                         toastMessage("Please Correct your credentials", "error");
                     }
                 }).catch((e) => {
@@ -179,10 +179,10 @@ export default function PersonalInfo() {
                 isError: true,
                 errorMsg: `Please enter valid phone`,
             };
-        }else if(phone.length<10){
-            return{
-                isError:true,
-                errorMsg:`Please enter 10 digit mobile number`
+        } else if (phone.length < 10) {
+            return {
+                isError: true,
+                errorMsg: `Please enter 10 digit mobile number`
             }
         } else {
             return {

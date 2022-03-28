@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
 import OtpInput from "react-otp-input";
-
 import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -26,16 +24,16 @@ export default function OtpVerify({ handleActions, email }) {
     const [loading, setLoading] = useState(false);
     const { OTPResult } = useSelector((state) => state.userReducer);
     const [data, setData] = useState({
-        otp_id:OTPResult,
-        check:'VERIFICATION',
-        otp:""
+        otp_id: OTPResult,
+        check: 'VERIFICATION',
+        otp: ""
     })
 
     const classes = useStyles();
 
     useEffect(() => {
         toastMessage(`Verification code send to ${email}`, "success");
-    },[]);
+    }, []);
 
     const verifyOTP = async () => {
         setLoading(true);
@@ -50,13 +48,13 @@ export default function OtpVerify({ handleActions, email }) {
                 body: JSON.stringify(data)
             })
             setLoading(false);
-            if(res.status === 200){
+            if (res.status === 200) {
                 handleActions({
                     openStep1: false,
                     openStep2: true,
                     openOTPVerify: false,
                 });
-            }else
+            } else
                 toastMessage("Invalid code. Please enter valid code", "info");
         } catch (error) {
             setLoading(false);
@@ -78,7 +76,7 @@ export default function OtpVerify({ handleActions, email }) {
 
     const handleChange = (OTP) => {
         setOTP(OTP);
-        setData({...data,otp:OTP})
+        setData({ ...data, otp: OTP })
     }
 
     return (

@@ -26,12 +26,12 @@ export default function Products() {
 
     const handleClick = (value) => {
         value.qty = 1;
-        history.push(`/product/${value.title}`,{
-            data:value
+        history.push(`/product/${value.title}`, {
+            data: value
         })
     }
 
-    const AddToCart = (value) =>{
+    const AddToCart = (value) => {
         value.qty = 1;
         addToCart(value)
     }
@@ -43,7 +43,7 @@ export default function Products() {
                 <p>{data.length} Items</p>
             </div>
             <hr />
-            <div className='container-fluid' style={{backgroundColor:'#e4e7ed'}}>
+            <div className='container-fluid' style={{ backgroundColor: '#e4e7ed' }}>
                 <div className="row">
                     {data.length > 0 ? data.map((value, index) => {
                         return (<div className="col-sm-4 mt-2" key={index}>
@@ -55,9 +55,9 @@ export default function Products() {
                                     <p className="card-text">Free Delivery</p>
                                 </div>
                                 <div className="card-footer">
-                                    <button className='btn btn-primary' onClick={()=>AddToCart(value)}><ShoppingCart /> ADD TO CART</button>
+                                    <button className='btn btn-primary' onClick={() => AddToCart(value)}><ShoppingCart /> ADD TO CART</button>
                                     &nbsp;&nbsp;&nbsp;
-                                    <button className='btn btn-warning' onClick={()=>handleClick(value)}><ShoppingBag /> EXPLORE... </button>
+                                    <button className='btn btn-warning' onClick={() => handleClick(value)}><ShoppingBag /> EXPLORE... </button>
                                 </div>
                             </div>
                         </div>)

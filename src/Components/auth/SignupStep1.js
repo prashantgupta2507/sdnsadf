@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignupStep1({ handleActions }) {
 
     const [email, setEmailId] = useState({
-        value:"",
+        value: "",
         isError: false,
         errorMsg: "",
     })
@@ -72,8 +72,8 @@ export default function SignupStep1({ handleActions }) {
                     'Accept': 'application/json, text/plain, */*'
                 },
                 body: JSON.stringify({
-                    email:email.value,
-                    type:"VERIFICATION"
+                    email: email.value,
+                    type: "VERIFICATION"
                 })
             });
             const result = await res.json()
@@ -121,8 +121,8 @@ export default function SignupStep1({ handleActions }) {
     };
 
     const handleInputs = (e) => {
-        setEmailId({ ...email, value: e.target.value});
-      };
+        setEmailId({ ...email, value: e.target.value });
+    };
 
     return (
         <>

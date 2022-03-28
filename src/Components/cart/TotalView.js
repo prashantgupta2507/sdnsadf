@@ -40,7 +40,7 @@ export default function TotalView({ page = "cart" }) {
   const { cartItems, stateChangeNotifyCounter } = useSelector((state) => state.cartReducer)
   const dispatch = useDispatch();
 
-  const { setTotalAmount } = bindActionCreators(orderActionCreators,dispatch)
+  const { setTotalAmount } = bindActionCreators(orderActionCreators, dispatch)
 
   useEffect(() => {
     totalAmount();
@@ -50,8 +50,8 @@ export default function TotalView({ page = "cart" }) {
     let price = 0,
       discount = 0;
     cartItems.map((item) => {
-      price += ((item.price*100)/(100-item.discount)) * item.qty
-      discount += (((item.price*100)/(100-item.discount)) * item.qty)*(item.discount/100);
+      price += ((item.price * 100) / (100 - item.discount)) * item.qty
+      discount += (((item.price * 100) / (100 - item.discount)) * item.qty) * (item.discount / 100);
     });
 
     setPrice(Math.floor(price));
@@ -76,9 +76,9 @@ export default function TotalView({ page = "cart" }) {
           Price ({cartItems?.length} item)
           <span className={classes.price}>₹{price}</span>
         </Typography>
-          <Typography>
-            Discount<span className={classes.price}>-₹{discount}</span>
-          </Typography>
+        <Typography>
+          Discount<span className={classes.price}>-₹{discount}</span>
+        </Typography>
         <Typography>
           Delivery Charges
           <span className={classes.price}>

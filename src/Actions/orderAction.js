@@ -26,7 +26,7 @@ export const getOrderDetails = () => async (dispatch, getState) => {
     const { isAuthenticate, authtoken } = getState().userReducer;
     if (isAuthenticate) {
         try {
-            const { data } = await axios.post("http://localhost:5500/api/order/orders/get-order-details", {authtoken});
+            const { data } = await axios.post("http://localhost:5500/api/order/orders/get-order-details", { authtoken });
             console.table(data)
             dispatch({
                 type: actionType.GET_ORDER_DETAILS,

@@ -21,12 +21,12 @@ export default function PendingOrders() {
 
   const confirmOrder = (order_id) => {
     axios.patch('http://localhost:5500/api/admin/confirmOrder', { authtoken, order_id })
-      .then(()=>setRef(!ref))
+      .then(() => setRef(!ref))
   }
 
   const cancelOrder = (order_id) => {
     axios.post('http://localhost:5500/api/admin/cancelOrder', { authtoken, order_id })
-      .then(()=>setRef(!ref))
+      .then(() => setRef(!ref))
   }
 
   return (
@@ -56,8 +56,8 @@ export default function PendingOrders() {
                   </div>
                 </div>
                 <div className='container-fluid text-center py-2'>
-                  <button className='btn btn-success mx-2' type='button' onClick={()=>confirmOrder(value['Order Number'])}>Confirm Order</button>
-                  <button className='btn btn-danger' type='button' onClick={()=>cancelOrder(value['Order Number'])}>Cancel Order</button>
+                  <button className='btn btn-success mx-2' type='button' onClick={() => confirmOrder(value['Order Number'])}>Confirm Order</button>
+                  <button className='btn btn-danger' type='button' onClick={() => cancelOrder(value['Order Number'])}>Cancel Order</button>
                 </div>
               </div>
             ])
